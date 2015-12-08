@@ -5,8 +5,7 @@ COPY files/mkimage-arch-pacman.conf /root/mkimage-arch-pacman.conf
 COPY files/pacstrap /usr/bin/pacstrap
 COPY files/arch-chroot /usr/bin/arch-chroot
 
-RUN pacman -S expect tar --noconfirm && yes|pacman -Scc && \
-    ln -s /usr/bin/bash /bin/bash
+RUN pacman -S expect tar --noconfirm && yes|pacman -Scc
 
 VOLUME "/mnt"
 WORKDIR /root
