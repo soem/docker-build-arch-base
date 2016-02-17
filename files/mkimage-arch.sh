@@ -88,4 +88,5 @@ mknod -m 600 $DEV/initctl p
 mknod -m 666 $DEV/ptmx c 5 2
 ln -sf /proc/self/fd $DEV/fd
 
-/usr/bin/tar --numeric-owner --xattrs --acls -C $ROOTFS -c . > root.tar
+#/usr/bin/tar --numeric-owner --xattrs --acls -C $ROOTFS -c . -f root.tar
+XZ_OPT="-9 -T 0" /usr/bin/tar --owner=0 --group=0 --xattrs --acls -Jcf ./archlinux-base.tar.xz -C $ROOTFS .
