@@ -1,3 +1,4 @@
-mkdir ./build/
+mkdir -p ./build/
+rm -f ./build/*
 docker run --privileged -v "`pwd`/build/:/mnt" soem/build-arch-base:devel
-xz -z -c build/root.tar > archlinux-base.tar.xz
+mv build/archlinux-base.tar.xz archlinux-base.tar.xz
