@@ -1,6 +1,6 @@
 FROM soem/arch-bootstrap:latest
 
-RUN pacman -S expect tar --noconfirm && yes|pacman -Scc
+RUN pacman -S expect tar --force --noconfirm && yes|pacman -Scc
 
 COPY files/mkimage-arch.sh /root/mkimage-arch.sh
 COPY files/mkimage-arch-pacman.conf /root/mkimage-arch-pacman.conf
